@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Problems Solution</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            color: #4a5568;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .section h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .problem {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        
+        .problem h3 {
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        input {
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 5px;
+            transition: border-color 0.3s ease;
+            width: 300px;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .output {
+            background: #1a202c;
+            color: #68d391;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            border-left: 4px solid #68d391;
+        }
+        
+        .demo-area {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 2px dashed #cbd5e0;
+        }
+        
+        ul {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            min-height: 50px;
+        }
+        
+        li {
+            padding: 8px;
+            margin: 5px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 5px;
+            list-style: none;
+        }
+        
+        #displayText {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+            min-height: 30px;
+            margin: 10px 0;
+            font-size: 18px;
+            color: #4a5568;
+        }
+        
+        .code-demo {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            white-space: pre-wrap;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 JavaScript Problems - Complete Solution</h1>
+        
+        <!-- Section 1: Arrow Functions -->
+        <div class="section">
+            <h2>1. Arrow Functions</h2>
+            
+            <div class="problem">
+                <h3>Problem 1.1 - Function Conversion</h3>
+                <div class="code-demo">// Arrow Functions:
+const square = num => num * num;
+const greet = name => `Hello, ${name}`;</div>
+                <button onclick="testArrowFunctions()">Test Arrow Functions</button>
+                <div id="arrow-output" class="output"></div>
+            </div>
+            
+            <div class="problem">
+                <h3>Problem 1.2 - Using Arrow Functions with Array Methods</h3>
+                <div class="code-demo">let numbers = [2, 4, 6, 8];
+let doubled = numbers.map(num => num * 2);
+console.log(doubled); // [4, 8, 12, 16]</div>
+                <button onclick="testArrayMethods()">Test Array Methods</button>
+                <div id="array-output" class="output"></div>
+            </div>
+        </div>
+        
+        <!-- Section 2: Callback Functions -->
+        <div class="section">
+            <h2>2. Callback Functions</h2>
+            
+            <div class="problem">
+                <h3>Problem 2.1 - Execute a Callback</h3>
+                <div class="code-demo">function greetUser(name, callback) {
+  console.log(`Welcome, ${name}!`);
+  callback();
+}
+greetUser("Palak", () => console.log("Callback executed!"));</div>
+                <button onclick="testCallback()">Test Callback Function</button>
+                <div id="callback-output" class="output"></div>
+            </div>
+            
+            <div class="problem">
+                <h3>Problem 2.2 - Custom Array Processor</h3>
+                <div class="code-demo">function processArray(arr, callback) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(callback(arr[i]));
+  }
+  return result;
+}
+console.log(processArray([1, 2, 3], num => num * 10)); // [10, 20, 30]</div>
+                <button onclick="testProcessArray()">Test Process Array</button>
+                <div id="process-output" class="output"></div>
+            </div>
+        </div>
+        
+        <!-- Section 3: Promises -->
+        <div class="section">
+            <h2>3. Promises</h2>
+            
+            <div class="problem">
+                <h3>Problem 3.1 - Simple Promise Handling</h3>
+                <div class="code-demo">function loadData() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("Data Loaded"), 2000);
+  });
+}
+loadData().then(console.log);</div>
+                <button onclick="testLoadData()">Test Load Data (2s delay)</button>
+                <div id="promise-output" class="output"></div>
+            </div>
+            
+            <div class="problem">
+                <h3>Problem 3.2 - Simulate an API Call</h3>
+                <div class="code-demo">function fakeFetch(url) {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(`Data fetched from ${url}`), 3000);
+  });
+}
+fakeFetch("https://api.example.com").then(console.log);</div>
+                <button onclick="testFakeFetch()">Test Fake Fetch (3s delay)</button>
+                <div id="fetch-output" class="output"></div>
+            </div>
+        </div>
+        
+        <!-- Section 4: DOM Manipulation -->
+        <div class="section">
+            <h2>4. DOM Manipulation</h2>
+            
+            <div class="problem">
+                <h3>Problem 4.1 - Change HTML Content</h3>
+                <div class="demo-area">
+                    <p id="demo">This is a paragraph.</p>
+                    <button onclick="changeText()">Click Me</button>
+                </div>
+            </div>
+            
+            <div class="problem">
+                <h3>Problem 4.2 - Dynamic List Items</h3>
+                <div class="demo-area">
+                    <ul id="myList"></ul>
+                    <button onclick="addItem()">Add Item</button>
+                    <button onclick="clearList()">Clear List</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 5: Events -->
+        <div class="section">
+            <h2>5. Events</h2>
+            
+            <div class="problem">
+                <h3>Problem 5.1 - Button Click Event</h3>
+                <div class="demo-area">
+                    <button id="btnClick">Click Me</button>
+                    <div id="click-output" class="output"></div>
+                </div>
+            </div>
+            
+            <div class="problem">
+                <h3>Problem 5.2 - Keyboard Input Display</h3>
+                <div class="demo-area">
+                    <input type="text" id="inputField" placeholder="Type something..." />
+                    <div id="displayText">Start typing to see text appear here...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Arrow Functions Solutions
+        
+        // Problem 1.1 - Function Conversion (matching code.txt exactly)
+        const square = num => num * num;
+        const greet = name => `Hello, ${name}`;
+        
+        function testArrowFunctions() {
+            const output = document.getElementById('arrow-output');
+            output.innerHTML = `
+                square(5) = ${square(5)}<br>
+                greet("Alice") = ${greet("Alice")}<br>
+                square(9) = ${square(9)}<br>
+                greet("Bob") = ${greet("Bob")}
+            `;
+        }
+        
+        // Problem 1.2 - Using Arrow Functions with Array Methods (matching code.txt exactly)
+        function testArrayMethods() {
+            let numbers = [2, 4, 6, 8];
+            let doubled = numbers.map(num => num * 2);
+            console.log(doubled); // [4, 8, 12, 16]
+            
+            const output = document.getElementById('array-output');
+            output.innerHTML = `
+                Original array: [${numbers.join(', ')}]<br>
+                Doubled array: [${doubled.join(', ')}]
+            `;
+        }
+        
+        // 2. Callback Functions Solutions
+        
+        // Problem 2.1 - Execute a Callback (matching code.txt exactly)
+        function greetUser(name, callback) {
+            console.log(`Welcome, ${name}!`);
+            callback();
+        }
+        
+        function testCallback() {
+            const output = document.getElementById('callback-output');
+            output.innerHTML = '';
+            
+            // Using the exact code from code.txt
+            greetUser("Palak", () => {
+                console.log("Callback executed!");
+                output.innerHTML = 'Welcome, Palak!<br>Callback executed!';
+            });
+        }
+        
+        // Problem 2.2 - Custom Array Processor (matching code.txt exactly)
+        function processArray(arr, callback) {
+            let result = [];
+            for (let i = 0; i < arr.length; i++) {
+                result.push(callback(arr[i]));
+            }
+            return result;
+        }
+        
+        function testProcessArray() {
+            const result = processArray([1, 2, 3], num => num * 10); // [10, 20, 30]
+            console.log(result);
+            
+            const output = document.getElementById('process-output');
+            output.innerHTML = `
+                processArray([1, 2, 3], num => num * 10) = [${result.join(', ')}]
+            `;
+        }
+        
+        // 3. Promises Solutions
+        
+        // Problem 3.1 - Simple Promise Handling (matching code.txt exactly)
+        function loadData() {
+            return new Promise(resolve => {
+                setTimeout(() => resolve("Data Loaded"), 2000);
+            });
+        }
+        
+        function testLoadData() {
+            const output = document.getElementById('promise-output');
+            output.innerHTML = 'Loading data... (wait 2 seconds)';
+            
+            loadData().then(result => {
+                console.log(result);
+                output.innerHTML = `✅ ${result}`;
+            });
+        }
+        
+        // Problem 3.2 - Simulate an API Call (matching code.txt exactly)
+        function fakeFetch(url) {
+            return new Promise(resolve => {
+                setTimeout(() => resolve(`Data fetched from ${url}`), 3000);
+            });
+        }
+        
+        function testFakeFetch() {
+            const output = document.getElementById('fetch-output');
+            output.innerHTML = 'Fetching data... (wait 3 seconds)';
+            
+            fakeFetch("https://api.example.com").then(result => {
+                console.log(result);
+                output.innerHTML = `✅ ${result}`;
+            });
+        }
+        
+        // 4. DOM Manipulation Solutions
+        
+        // Problem 4.1 - Change HTML Content (matching code.txt exactly)
+        function changeText() {
+            document.getElementById("demo").innerText = "Text updated!";
+        }
+        
+        // Problem 4.2 - Dynamic List Items (matching code.txt exactly)
+        let count = 0;
+        function addItem() {
+            count++;
+            let li = document.createElement("li");
+            li.textContent = `Item ${count}`;
+            document.getElementById("myList").appendChild(li);
+        }
+        
+        function clearList() {
+            const list = document.getElementById('myList');
+            list.innerHTML = '';
+            count = 0;
+        }
+        
+        // 5. Events Solutions
+        
+        // Problem 5.1 - Button Click Event (matching code.txt exactly)
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById("btnClick").addEventListener("click", () => {
+                console.log("Button clicked!");
+                const clickOutput = document.getElementById('click-output');
+                clickOutput.innerHTML += "Button clicked!<br>";
+            });
+            
+            // Problem 5.2 - Keyboard Input Display (matching code.txt exactly)
+            document.getElementById("inputField").addEventListener("input", e => {
+                document.getElementById("displayText").innerText = e.target.value;
+            });
+        });
+    </script>
+</body>
+</html>
